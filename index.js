@@ -19,11 +19,18 @@ const server = restify.createServer({
 
 /**
  * Bundled Plugins (http://restify.com/#bundled-plugins)
+ * JSON is false because form-data is used for image uploading
+ * uploads directory is static so images can be observed (e.g. http://localhost:3000/download.jpeg)
  */
+
 server.use(restify.plugins.jsonBodyParser({ mapParams: false }))
+server.get('*', restify.plugins.serveStatic({
+    directory: './uploads'
+  }))
 server.use(restify.plugins.acceptParser(server.acceptable))
 server.use(restify.plugins.queryParser({ mapParams: true }))
 server.use(restify.plugins.fullResponse())
+
 
 /**
  * Start Server, Connect to DB & Require Route Files
