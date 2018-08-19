@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/claudiolsmonteiro/RESTAPI#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "mongoose": "^5.2.9",
     "mongoose-timestamp": "^0.6.0",
     "restify": "^7.2.1",

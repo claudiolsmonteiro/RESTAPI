@@ -1,4 +1,4 @@
-const news = require('../models/news')
+const news = require('../models/news').default
 
 module.exports = function(server) {
 
@@ -8,7 +8,7 @@ module.exports = function(server) {
     server.post('/news', (req, res, next) => {
 
         let data = req.body || {}
-
+        console.log(req.body)
         news.create(data)
             .then(task => {
                 res.send(200, task)
@@ -21,7 +21,7 @@ module.exports = function(server) {
     })
 
     /**
-     * List
+     * List all news
      */
     server.get('/news', (req, res, next) => {
 
@@ -45,7 +45,7 @@ module.exports = function(server) {
     })
 
     /**
-     * Read
+     * Read a specific news item
      */
     server.get('/news/:newsId', (req, res, next) => {
 
@@ -88,23 +88,13 @@ module.exports = function(server) {
 
         const newsId = req.params.newsId
 
-        news.findOneAndRemove({ _id: newsId })
+        news.findOneAndDelete({ _id: newsId })
             .then(() => {
-
-                // remove associated todos to avoid orphaned data
-                Todo.deleteMany({ _id: newsId })
-                    .then(() => {
-                        res.send(204)
-                        next()
-                    })
-                    .catch(err => {
-                        res.send(500, err)
-                    })
+                res.send(204)
+                next()
             })
             .catch(err => {
                 res.send(500, err)
             })
-
     })
-
 }
