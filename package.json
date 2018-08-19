@@ -21,6 +21,7 @@
     "fs": "0.0.1-security",
     "mongoose": "^5.2.9",
     "mongoose-timestamp": "^0.6.0",
+    "multer": "^1.3.1",
     "restify": "^7.2.1",
     "restify-plugins": "^1.6.0"
   }

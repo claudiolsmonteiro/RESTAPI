@@ -1,12 +1,14 @@
-const news = require('../models/news')
+const news = require('../models/news'),
+      multer = require('multer'),
+      upload = multer({dest: 'uploads/'})
 
 module.exports = function(server) {
 
     /**
      * Create
      */
-    server.post('/news', (req, res, next) => {
-
+    server.post('/news', upload.single('newsImage'), (req, res, next) => {
+        console.log(req.file);
         let data = req.body || {}
 
         news.create(data)

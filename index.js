@@ -20,7 +20,7 @@ const server = restify.createServer({
 /**
  * Bundled Plugins (http://restify.com/#bundled-plugins)
  */
-server.use(restify.plugins.jsonBodyParser({ mapParams: true }))
+server.use(restify.plugins.jsonBodyParser({ mapParams: false }))
 server.use(restify.plugins.acceptParser(server.acceptable))
 server.use(restify.plugins.queryParser({ mapParams: true }))
 server.use(restify.plugins.fullResponse())
