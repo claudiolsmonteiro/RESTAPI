@@ -8,7 +8,7 @@ deploy:
   provider: heroku
   api_key:
     secure: GJKAsagHvih1nwSRzfdFFwgXWrYYgrjB2v/3pio9NVb7nuaWPmIBa98ICdZ00VxwdgL7EcHFHT7xs6EAuDBlD1A27YcnAuLh/qaQKlj1i9LILZkE36xMUndvtZynAYQbWEaPyljuK3xhAP2R5KJyulvPAZOMh5cqWJjZEKgTu4mLlwnh3xmdcIPYXg85fr6s+bEweeVGWT/ozOo7EB5esh+yxm4mnYoDFWQ+mOMaukInNdgQEWLp2Gk66ufgiKMdar6sRwfwsKBRK2WGjTl7JymIdUOd7aZzQgwNYsh7c/eAM/EJ2VS/jUixoKNt1AaDJ30PnrSqYODG6LxceSQtOSxQV0Q4+H7YO+BivFLAaY4MGt1s8yejOi+uCRSjdpMbNW6/6CsAev+lN9p4TE8ZjHXbgBgpdQFyqd0L9cLBrD4xjWwujJalOybqc9MHC4mdauSXiI57zGbJbrvIrQ8lMj0CuATkcURapk+cZyf5tQ03SQpTc2M1sB0sCx6d+Tim1eFD+JJEzsYqOx7NW02Gxd6zRppf1za4/HKJjk1LufJHOx/C1Nz0zwtnIiLyJQRgQncv7UGUBquZkXcA233T//txSAFV6e0uLsANuZ8BLqHhsubH1UXesRi/5fM/pBJFUnkirRgE08j/LYX/bOBo27k4VW7BzMXoOhyPIRnOKII=
-  app: rest-api
+  app: restexercise
   on:
     repo: claudiolsmonteiro/RESTAPI
     branch: master
