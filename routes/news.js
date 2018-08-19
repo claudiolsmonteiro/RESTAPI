@@ -7,7 +7,7 @@ const news = require('../models/news'),
  */
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, './uploads/');
+        cb(null, './uploads/')
     },
     filename: function(req, file, cb) {
         cb(null, file.originalname)
@@ -29,11 +29,11 @@ const fileFilter = (req, file, cb) => {
  * Upload method of multer with a maximum file size of 5mb
  */
 const upload = multer({
-    storage: storage, 
+    storage: storage,
     limit: {
         fileSize: 1024 * 1024 * 5
     },
-    fileFilter: fileFilter 
+    fileFilter: fileFilter
 })
 
 module.exports = function(server) {
@@ -103,7 +103,7 @@ module.exports = function(server) {
             opts = {
                 new: true
             }
-        if(req.file != undefined) {
+        if(req.file !== undefined) {
             data.picture= req.file.path
         }
         news.findByIdAndUpdate({ _id: req.params.newsId }, data, opts)
@@ -130,8 +130,10 @@ module.exports = function(server) {
         news.findById(req.params.newsId)
             .then(news => {
                 fs.unlink(news.picture, (err) => {
-                    if (err) throw err;
-                    console.log(news.picture + " was deleted.");
+                    if (err) {
+                        console.log(err)
+                    }
+                    console.log(news.picture + " was deleted.")
                   })
                 next()
             })
