@@ -69,7 +69,6 @@ module.exports = function(server) {
 
         news.find(query).skip(skip)
             .then(news => {
-                console.log(res);
                 res.send(200, news)
                 next()
             })
