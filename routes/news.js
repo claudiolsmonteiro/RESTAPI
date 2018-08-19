@@ -1,4 +1,4 @@
-const news = require('../models/news').default
+const news = require('../models/news')
 
 module.exports = function(server) {
 
@@ -8,7 +8,7 @@ module.exports = function(server) {
     server.post('/news', (req, res, next) => {
 
         let data = req.body || {}
-        console.log(req.body)
+
         news.create(data)
             .then(task => {
                 res.send(200, task)
