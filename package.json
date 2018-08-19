@@ -1,0 +1,27 @@
+{
+  "name": "RESTAPI",
+  "version": "1.0.0",
+  "description": "REST API evaluation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiolsmonteiro/RESTAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiolsmonteiro/RESTAPI/issues"
+  },
+  "homepage": "https://github.com/claudiolsmonteiro/RESTAPI#readme",
+  "dependencies": {
+    "mongoose": "^5.2.9",
+    "mongoose-timestamp": "^0.6.0",
+    "restify": "^7.2.1",
+    "restify-plugins": "^1.6.0"
+  }
+}
